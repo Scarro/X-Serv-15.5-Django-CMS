@@ -21,8 +21,7 @@ def agregar(request, nombre, recurso):
 		Pages.objects.get(nombre=nombre)
 	except (KeyError, Pages.DoesNotExist):
 		Pages.objects.create(nombre=nombre, recurso=recurso)
-
-	context = {
-		'pages': Pages.objects.all(),
-	}
+		context = {
+			'pages': Pages.objects.all(),
+		}
 	return render(request, 'cms/basesite.html', context)
