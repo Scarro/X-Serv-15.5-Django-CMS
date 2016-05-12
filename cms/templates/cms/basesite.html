@@ -1,0 +1,11 @@
+<h1>Recursos disponibles</h1>
+
+{% if pages %}
+	<ul>
+		{% for recurso in pages %}
+		<li><a href="http://{{recurso.recurso}}">{{recurso.nombre}}</a></li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No hay recursos disponibles</p>
+{% endif %}
