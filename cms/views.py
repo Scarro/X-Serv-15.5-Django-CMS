@@ -15,12 +15,14 @@ def index(request):
     }
     return render(request, template, context)
 
+
 def agregar(request, nombre, recurso):
     try:
         Pages.objects.get(nombre=nombre)
     except (KeyError, Pages.DoesNotExist):
         Pages.objects.create(nombre=nombre, recurso=recurso)
     context = {
-        'pages':Pages.objects.all()
+        'pages': Pages.objects.all()
     }
     return render(request, 'cms/basesite.html', context)
+    
