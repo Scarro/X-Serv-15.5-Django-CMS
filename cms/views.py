@@ -11,7 +11,7 @@ from .models import Pages
 def index(request):
     template = "cms/basesite.html"
     context = {
-        'pages':Pages.objects.all()
+        'pages': Pages.objects.all()
     }
     return render(request, template, context)
 
@@ -25,4 +25,3 @@ def agregar(request, nombre, recurso):
         'pages': Pages.objects.all()
     }
     return render(request, 'cms/basesite.html', context)
-    
