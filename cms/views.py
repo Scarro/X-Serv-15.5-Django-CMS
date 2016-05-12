@@ -6,8 +6,9 @@ from .models import Pages
 
 # Create your views here.
 
+
 @csrf_exempt
-def index (request):
+def index(request):
 	template = "cms/basesite.html"
 	context = {
 		'pages': Pages.objects.all(),
